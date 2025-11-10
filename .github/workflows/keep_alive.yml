@@ -2,13 +2,12 @@ name: Keep Hugging Face Space Alive
 
 on:
   schedule:
-    # Runs every day at 00:00 UTC
-    - cron: '0 0 * * *'
+    - cron: '*/15 * * * *'
   workflow_dispatch:
 
 jobs:
   ping:
     runs-on: ubuntu-latest
     steps:
-      - name: Ping HF Space
-        run: curl -L https://huggingface.co/spaces/Andrewsha/public-portfolio-bot
+      - name: Ping HF Space Direct URL
+        run: curl -L https://andrewsha-public-portfolio-bot.hf.space
