@@ -9,8 +9,5 @@ jobs:
   ping:
     runs-on: ubuntu-latest
     steps:
-      - name: Ping Private HF Space
-        run: |
-          curl -L -H "Authorization: Bearer ${{ secrets.HF_TOKEN }}" https://andrewsha-my-portfolio-bot.hf.space
-      - name: Ping Public HF Space
+      - name: Ping New Portfolio Bot
         run: curl -L https://andrewsha-portfolio-bot.hf.space
