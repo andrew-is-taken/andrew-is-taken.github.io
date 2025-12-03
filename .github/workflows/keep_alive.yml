@@ -13,4 +13,4 @@ jobs:
         run: |
           curl -L -H "Authorization: Bearer ${{ secrets.HF_TOKEN }}" https://andrewsha-my-portfolio-bot.hf.space
       - name: Ping Public HF Space
-        run: curl -L https://andrewsha-public-portfolio-bot.hf.space
+        run: curl -L https://andrewsha-portfolio-bot.hf.space
