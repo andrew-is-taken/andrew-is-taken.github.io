@@ -149,6 +149,15 @@
 
         .skill-item i {
             font-size: 1.5rem;
+            line-height: 1;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .skill-item img {
+            height: 1.1rem;
+            width: auto;
+            display: block;
         }
 
         .skill-item span {
@@ -756,8 +765,8 @@
                         { name: "TensorFlow", icon: "devicon-tensorflow-original colored" },
                         { name: "PyTorch", icon: "devicon-pytorch-original colored" },
                         { name: "Keras", icon: "devicon-keras-plain colored" },
-                        { name: "NumPy", icon: "devicon-numpy-original colored" },
-                        { name: "Pandas", icon: "devicon-pandas-original colored" }
+                        { name: "NumPy", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" />' },
+                        { name: "Pandas", icon: "devicon-pandas-plain-wordmark colored" }
                     ]
                 },
                 {
@@ -765,7 +774,7 @@
                     items: [
                         { name: "Git", icon: "devicon-git-plain colored" },
                         { name: "Docker", icon: "devicon-docker-plain colored" },
-                        { name: "LaTeX", icon: "devicon-latex-original colored" }
+                        { name: "LaTeX", icon: "devicon-latex-original" }
                     ]
                 }
             ],
@@ -775,25 +784,24 @@
                     items: [
                         { name: "Firebase", icon: "devicon-firebase-plain colored" },
                         { name: "Supabase", icon: "devicon-supabase-plain colored" },
-                        { name: "AWS", icon: "devicon-amazonwebservices-original-wordmark colored" },
-                        { name: "SQL", icon: "devicon-mysql-plain colored" },
-                        { name: "Web Scraping", icon: "devicon-chrome-plain colored" }
+                        { name: "AWS", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" />' },
+                        { name: "SQL", icon: "devicon-mysql-plain colored" }
                     ]
                 },
                 {
                     title: "Game Engines & 3D",
                     items: [
-                        { name: "Unity", icon: "devicon-unity-original colored" },
-                        { name: "Unreal 5", icon: "devicon-unrealengine-original colored" },
+                        { name: "Unity", icon: "devicon-unity-plain colored" },
+                        { name: "Unreal Engine 5", icon: "devicon-unrealengine-original" },
                         { name: "Blender", icon: "devicon-blender-original colored" }
                     ]
                 },
                 {
                     title: "Spoken Languages",
                     items: [
-                        { name: "English C1", icon: "devicon-globe-plain" },
-                        { name: "German B1", icon: "devicon-globe-plain" },
-                        { name: "Russian", icon: "devicon-globe-plain" }
+                        { name: "English", icon: '<img src="https://flagcdn.com/w40/us.png" alt="US Flag" />' },
+                        { name: "German", icon: '<img src="https://flagcdn.com/w40/de.png" alt="German Flag" />' },
+                        { name: "Russian", icon: '<img src="https://flagcdn.com/w40/ru.png" alt="Russian Flag" />' }
                     ]
                 }
             ]
@@ -806,7 +814,7 @@
             function createCategoryHTML(category) {
                 const itemsHTML = category.items.map(item => `
                     <div class="skill-item" title="${item.name}">
-                        ${item.icon.includes('globe') ? '🌍' : `<i class="${item.icon}"></i>`}
+                        ${item.icon.startsWith('<') ? item.icon : item.icon.includes('globe') ? '🌍' : `<i class="${item.icon}"></i>`}
                         <span>${item.name}</span>
                     </div>
                 `).join('');
