@@ -4,7 +4,7 @@ const skillsData = {
         {
             title: "Programming Languages",
             items: [
-                { name: "Python", icon: "devicon-python-plain colored" },
+                { name: "Python", icon: "devicon-python-plain colored", projects: ["Project 1", "Project 3"] },
                 { name: "C++", icon: "devicon-cplusplus-plain colored" },
                 { name: "Java", icon: "devicon-java-plain colored" },
                 { name: "C#", icon: "devicon-csharp-plain colored" },

@@ -90,8 +90,7 @@ function removeLoading() {
     if (loading) loading.remove();
 }
 
-async function handleSend() {
-    const text = userInput.value.trim();
+async function sendMessage(text) {
     if (!text) return;
 
     addMessage(text, true);
@@ -119,7 +118,6 @@ async function handleSend() {
         chatHistory.push([text, botResponse]);
         addMessage(botResponse, false);
 
-        // Check Context for Skills
         // Check Context
         const context = checkContext(text);
         if (context === 'projects') {
@@ -142,7 +140,14 @@ async function handleSend() {
     }
 }
 
+async function handleSend() {
+    sendMessage(userInput.value.trim());
+}
+
 sendBtn.addEventListener('click', handleSend);
 userInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') handleSend();
 });
+
+// Expose sendMessage globally
+window.sendMessage = sendMessage;

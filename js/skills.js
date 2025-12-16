@@ -3,12 +3,18 @@ function renderPanels(leftId, rightId, data) {
     const rightContainer = document.getElementById(rightId);
 
     function createCategoryHTML(category) {
-        const itemsHTML = category.items.map(item => `
-            <div class="skill-item" title="${item.name}">
-                ${item.icon.startsWith('<') ? item.icon : item.icon.includes('globe') ? '🌍' : `<i class="${item.icon}"></i>`}
-                <span>${item.name}</span>
+        const itemsHTML = category.items.map(item => {
+            const projectsData = item.projects ? JSON.stringify(item.projects).replace(/"/g, '&quot;') : '[]';
+            const hasProjects = item.projects && item.projects.length > 0;
+            return `
+            <div class="skill-item ${hasProjects ? 'interactive' : ''}" title="${item.name}" data-projects="${projectsData}">
+                <div class="skill-content">
+                     ${item.icon.startsWith('<') ? item.icon : item.icon.includes('globe') ? '🌍' : `<i class="${item.icon}"></i>`}
+                    <span>${item.name}</span>
+                </div>
+                <div class="skill-projects"></div>
             </div>
-        `).join('');
+        `}).join('');
 
         return `
             <div class="skill-category">
@@ -24,7 +30,44 @@ function renderPanels(leftId, rightId, data) {
     if (rightContainer && data.right) {
         rightContainer.innerHTML = data.right.map(createCategoryHTML).join('');
     }
+
+    // Add generic click handler for skills
+    const handleSkillClick = (e) => {
+        const skillItem = e.target.closest('.skill-item');
+        if (!skillItem || !skillItem.classList.contains('interactive')) return;
+
+        // Prevent toggling if clicking a project link
+        if (e.target.closest('.skill-project-link')) return;
+
+        skillItem.classList.toggle('expanded');
+
+        const projectsContainer = skillItem.querySelector('.skill-projects');
+        const projects = JSON.parse(skillItem.dataset.projects || '[]');
+
+        if (skillItem.classList.contains('expanded')) {
+            projectsContainer.innerHTML = projects.map(proj =>
+                `<span class="skill-project-link" onclick="handleProjectClick('${proj}')">${proj}</span>`
+            ).join('');
+        } else {
+            projectsContainer.innerHTML = '';
+        }
+    };
+
+    [leftContainer, rightContainer].forEach(container => {
+        if (container) {
+            container.removeEventListener('click', handleSkillClick); // Clean up potential duplicates if re-rendered
+            container.addEventListener('click', handleSkillClick);
+        }
+    });
 }
+
+function handleProjectClick(projectName) {
+    if (window.sendMessage) {
+        window.sendMessage(`Tell me about ${projectName}`);
+    }
+}
+// Expose handleProjectClick globally
+window.handleProjectClick = handleProjectClick;
 
 renderPanels('skillsLeft', 'skillsRight', skillsData);
 renderPanels('projectsLeft', 'projectsRight', projectsData);
