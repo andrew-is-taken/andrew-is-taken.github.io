@@ -60,3 +60,24 @@ const skillsData = {
         }
     ]
 };
+
+const projectsData = {
+    left: [
+        {
+            title: "Recent Work",
+            items: [
+                { name: "Project A", icon: "devicon-github-original" },
+                { name: "Project B", icon: "devicon-github-original" }
+            ]
+        }
+    ],
+    right: [
+        {
+            title: "Experiments",
+            items: [
+                { name: "Project C", icon: "devicon-github-original" },
+                { name: "Project D", icon: "devicon-github-original" }
+            ]
+        }
+    ]
+};

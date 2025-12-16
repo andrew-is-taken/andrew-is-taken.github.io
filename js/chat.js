@@ -120,11 +120,15 @@ async function handleSend() {
         addMessage(botResponse, false);
 
         // Check Context for Skills
-        const userContext = checkSkillContext(text);
-        if (userContext === 'skills') {
+        // Check Context
+        const context = checkContext(text);
+        if (context === 'projects') {
+            setProjectsVisibility(true);
+        } else if (context === 'skills') {
             setSkillsVisibility(true);
         } else {
             setSkillsVisibility(false);
+            setProjectsVisibility(false);
         }
 
     } catch (err) {

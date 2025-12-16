@@ -1,6 +1,6 @@
-function renderSkills() {
-    const leftContainer = document.getElementById('skillsLeft');
-    const rightContainer = document.getElementById('skillsRight');
+function renderPanels(leftId, rightId, data) {
+    const leftContainer = document.getElementById(leftId);
+    const rightContainer = document.getElementById(rightId);
 
     function createCategoryHTML(category) {
         const itemsHTML = category.items.map(item => `
@@ -18,22 +18,34 @@ function renderSkills() {
         `;
     }
 
-    if (leftContainer && skillsData.left) {
-        leftContainer.innerHTML = skillsData.left.map(createCategoryHTML).join('');
+    if (leftContainer && data.left) {
+        leftContainer.innerHTML = data.left.map(createCategoryHTML).join('');
     }
-    if (rightContainer && skillsData.right) {
-        rightContainer.innerHTML = skillsData.right.map(createCategoryHTML).join('');
+    if (rightContainer && data.right) {
+        rightContainer.innerHTML = data.right.map(createCategoryHTML).join('');
     }
 }
 
-renderSkills();
+renderPanels('skillsLeft', 'skillsRight', skillsData);
+renderPanels('projectsLeft', 'projectsRight', projectsData);
 
 function setSkillsVisibility(visible) {
     const body = document.body;
     if (visible) {
         body.classList.add('skills-visible');
+        body.classList.remove('projects-visible');
     } else {
         body.classList.remove('skills-visible');
+    }
+}
+
+function setProjectsVisibility(visible) {
+    const body = document.body;
+    if (visible) {
+        body.classList.add('projects-visible');
+        body.classList.remove('skills-visible');
+    } else {
+        body.classList.remove('projects-visible');
     }
 }
 
@@ -61,10 +73,10 @@ const skillsRegex = new RegExp(finalRegexString, 'i');
 
 const projectPriorityRegex = /project|built|created|portfolio|app|website|subspace|campus|checkers|ric|cv maker/i;
 
-function checkSkillContext(text) {
-    // If talking about projects, hide skills (Priority)
+function checkContext(text) {
+    // If talking about projects, show projects (Priority)
     if (projectPriorityRegex.test(text)) {
-        return null;
+        return 'projects';
     }
     if (skillsRegex.test(text)) {
         return 'skills';
