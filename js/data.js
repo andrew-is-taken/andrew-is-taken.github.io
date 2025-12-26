@@ -4,13 +4,13 @@ const skillsData = {
         {
             title: "Programming Languages",
             items: [
-                { name: "Python", icon: "devicon-python-plain colored", projects: ["Project 1", "Project 3"] },
+                { name: "Python", icon: "devicon-python-plain colored", projects: ["American Checkers"] },
                 { name: "C++", icon: "devicon-cplusplus-plain colored" },
                 { name: "Java", icon: "devicon-java-plain colored" },
-                { name: "C#", icon: "devicon-csharp-plain colored" },
+                { name: "C#", icon: "devicon-csharp-plain colored", projects: ["Subspace", "Rick"] },
                 { name: "OCaml", icon: "devicon-ocaml-plain colored" },
-                { name: "JavaScript", icon: "devicon-javascript-plain colored" },
-                { name: "TypeScript", icon: "devicon-typescript-plain colored" }
+                { name: "JavaScript", icon: "devicon-javascript-plain colored", projects: ["Campus Connect", "CV Maker"] },
+                { name: "TypeScript", icon: "devicon-typescript-plain colored", projects: ["Campus Connect", "CV Maker"] }
             ]
         },
         {
@@ -64,19 +64,45 @@ const skillsData = {
 const projectsData = {
     left: [
         {
-            title: "Recent Work",
+            title: "Game Development",
             items: [
-                { name: "Project A", icon: "devicon-github-original" },
-                { name: "Project B", icon: "devicon-github-original" }
+                {
+                    name: "Subspace",
+                    icon: "devicon-unity-plain colored",
+                    description: "Mobile FPS with portal mechanics and custom rendering optimization for low-end devices."
+                },
+                {
+                    name: "Rick",
+                    icon: "devicon-unity-plain colored",
+                    description: "Released Unity game with 20k+ downloads. Ad monetization and A/B testing for retention."
+                }
+            ]
+        },
+        {
+            title: "AI & Machine Learning",
+            items: [
+                {
+                    name: "American Checkers",
+                    icon: "devicon-python-plain colored",
+                    description: "RL agent using Q-Learning and Deep Q-Learning with performance comparison analysis."
+                }
             ]
         }
     ],
     right: [
         {
-            title: "Experiments",
+            title: "Mobile Applications",
             items: [
-                { name: "Project C", icon: "devicon-github-original" },
-                { name: "Project D", icon: "devicon-github-original" }
+                {
+                    name: "Campus Connect",
+                    icon: "devicon-react-original colored",
+                    description: "React Native uni app with AI chatbot, friend connections, and event planning."
+                },
+                {
+                    name: "CV Maker",
+                    icon: "devicon-react-original colored",
+                    description: "Generative AI app using GPT-4o to create and convert LaTeX CVs to PDF."
+                }
             ]
         }
     ]
