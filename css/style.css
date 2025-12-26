@@ -137,6 +137,21 @@ body {
     justify-content: flex-start;
 }
 
+/* Projects vertical layout */
+.projects-left .skill-items,
+.projects-right .skill-items {
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.projects-left .skill-items {
+    align-items: flex-end;
+}
+
+.projects-right .skill-items {
+    align-items: flex-start;
+}
+
 .skill-item {
     display: flex;
     align-items: center;

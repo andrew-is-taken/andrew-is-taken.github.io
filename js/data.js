@@ -4,31 +4,31 @@ const skillsData = {
         {
             title: "Programming Languages",
             items: [
-                { name: "Python", icon: "devicon-python-plain colored", projects: ["American Checkers"] },
-                { name: "C++", icon: "devicon-cplusplus-plain colored" },
-                { name: "Java", icon: "devicon-java-plain colored" },
+                { name: "Python", icon: "devicon-python-plain colored", projects: ["American Checkers", "TUM MGT Chatbot"] },
+                { name: "C++", icon: "devicon-cplusplus-plain colored", projects: ["University", "Personal Projects"] },
+                { name: "Java", icon: "devicon-java-plain colored", projects: ["University", "Personal Projects"] },
                 { name: "C#", icon: "devicon-csharp-plain colored", projects: ["Subspace", "Rick"] },
-                { name: "OCaml", icon: "devicon-ocaml-plain colored" },
-                { name: "JavaScript", icon: "devicon-javascript-plain colored", projects: ["Campus Connect", "CV Maker"] },
-                { name: "TypeScript", icon: "devicon-typescript-plain colored", projects: ["Campus Connect", "CV Maker"] }
+                { name: "OCaml", icon: "devicon-ocaml-plain colored", projects: ["University"] },
+                { name: "JavaScript", icon: "devicon-javascript-plain colored", projects: ["Campus Connect", "CV Maker", "TUM MGT Chatbot"] },
+                { name: "TypeScript", icon: "devicon-typescript-plain colored", projects: ["Campus Connect", "CV Maker", "TUM MGT Chatbot"] }
             ]
         },
         {
             title: "AI & ML Libraries",
             items: [
-                { name: "TensorFlow", icon: "devicon-tensorflow-original colored" },
-                { name: "PyTorch", icon: "devicon-pytorch-original colored" },
-                { name: "Keras", icon: "devicon-keras-plain colored" },
-                { name: "NumPy", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" />' },
-                { name: "Pandas", icon: "devicon-pandas-plain-wordmark colored" }
+                { name: "TensorFlow", icon: "devicon-tensorflow-original colored", projects: ["American Checkers"] },
+                { name: "PyTorch", icon: "devicon-pytorch-original colored", projects: ["University", "Personal Projects"] },
+                { name: "Keras", icon: "devicon-keras-plain colored", projects: ["American Checkers"] },
+                { name: "NumPy", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" />', projects: ["American Checkers"] },
+                { name: "Pandas", icon: "devicon-pandas-plain-wordmark colored", projects: ["University", "Personal Projects"] }
             ]
         },
         {
             title: "Tools & Technologies",
             items: [
-                { name: "Git", icon: "devicon-git-plain colored" },
-                { name: "Docker", icon: "devicon-docker-plain colored" },
-                { name: "LaTeX", icon: "devicon-latex-original" }
+                { name: "Git", icon: "devicon-git-plain colored", projects: ["All Projects"] },
+                { name: "Docker", icon: "devicon-docker-plain colored", projects: ["TUM MGT Chatbot"] },
+                { name: "LaTeX", icon: "devicon-latex-original", projects: ["University", "Personal Projects"] }
             ]
         }
     ],
@@ -36,18 +36,18 @@ const skillsData = {
         {
             title: "Data & Cloud",
             items: [
-                { name: "Firebase", icon: "devicon-firebase-plain colored" },
-                { name: "Supabase", icon: "devicon-supabase-plain colored" },
-                { name: "AWS", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" />' },
-                { name: "SQL", icon: "devicon-mysql-plain colored" }
+                { name: "Firebase", icon: "devicon-firebase-plain colored", projects: ["Subspace"] },
+                { name: "Supabase", icon: "devicon-supabase-plain colored", projects: ["Campus Connect"] },
+                { name: "AWS", icon: '<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" />', projects: ["Personal Projects"] },
+                { name: "SQL", icon: "devicon-mysql-plain colored", projects: ["TUM MGT Chatbot", "Campus Connect"] }
             ]
         },
         {
             title: "Game Engines & 3D",
             items: [
-                { name: "Unity", icon: "devicon-unity-plain colored" },
-                { name: "Unreal Engine 5", icon: "devicon-unrealengine-original" },
-                { name: "Blender", icon: "devicon-blender-original colored" }
+                { name: "Unity", icon: "devicon-unity-plain colored", projects: ["Subspace", "Rick"] },
+                { name: "Unreal Engine 5", icon: "devicon-unrealengine-original", projects: ["Professional Work", "Personal Projects"] },
+                { name: "Blender", icon: "devicon-blender-original colored", projects: ["Subspace", "Rick"] }
             ]
         },
         {
@@ -90,6 +90,16 @@ const projectsData = {
         }
     ],
     right: [
+        {
+            title: "Web Applications",
+            items: [
+                {
+                    name: "TUM MGT Chatbot",
+                    icon: "devicon-nextjs-plain",
+                    description: "Full-stack AI assistant with Next.js frontend and Python FastAPI backend, using OpenAI services."
+                }
+            ]
+        },
         {
             title: "Mobile Applications",
             items: [

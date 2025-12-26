@@ -134,7 +134,7 @@ const symbolPart = symbolSkills.length > 0 ? `(${symbolSkills.join('|')})` : '';
 const finalRegexString = [wordPart, symbolPart].filter(Boolean).join('|');
 const skillsRegex = new RegExp(finalRegexString, 'i');
 
-const projectPriorityRegex = /project|built|created|portfolio|app|website|subspace|campus|checkers|ric|cv maker/i;
+const projectPriorityRegex = /project|built|created|portfolio|app|website|subspace|campus|checkers|rick|cv maker|tum|mgt/i;
 
 function checkContext(text) {
     // If talking about projects, show projects (Priority)
