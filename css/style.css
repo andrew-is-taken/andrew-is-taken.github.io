@@ -321,6 +321,7 @@ body {
 
 /* Header */
 .header {
+    position: relative;
     padding: 24px 32px;
     border-bottom: 1px solid var(--glass-border);
     display: flex;
@@ -342,6 +343,29 @@ body {
 .header-content p {
     font-size: 0.875rem;
     color: var(--text-secondary);
+}
+
+.header-content {
+    flex: 1;
+}
+
+.github-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.github-link:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(-50%) scale(1.1);
 }
 
 .status-indicator {
