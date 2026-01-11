@@ -8,6 +8,8 @@ let chatHistory = [];
 function formatMessage(text) {
     let html = text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
     html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    // Handle markdown links [text](url)
+    html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="chat-link">$1</a>');
 
     const lines = html.split('\n');
     let output = [];
@@ -167,6 +169,16 @@ async function handleSend() {
 sendBtn.addEventListener('click', handleSend);
 userInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') handleSend();
+});
+
+// Preset message buttons
+document.querySelectorAll('.preset-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const message = btn.dataset.message;
+        if (message) {
+            sendMessage(message);
+        }
+    });
 });
 
 // Expose sendMessage globally

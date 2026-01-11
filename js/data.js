@@ -4,7 +4,7 @@ const skillsData = {
         {
             title: "Programming Languages",
             items: [
-                { name: "Python", icon: "devicon-python-plain colored", projects: ["American Checkers", "TUM MGT Chatbot"] },
+                { name: "Python", icon: "devicon-python-plain colored", projects: ["American Checkers", "TUM MGT Chatbot", "Smart Parking Lot"] },
                 { name: "C++", icon: "devicon-cplusplus-plain colored", projects: ["University", "Personal Projects"] },
                 { name: "Java", icon: "devicon-java-plain colored", projects: ["University", "Personal Projects"] },
                 { name: "C#", icon: "devicon-csharp-plain colored", projects: ["Subspace", "Rick"] },
@@ -28,7 +28,8 @@ const skillsData = {
             items: [
                 { name: "Git", icon: "devicon-git-plain colored", projects: ["All Projects"] },
                 { name: "Docker", icon: "devicon-docker-plain colored", projects: ["TUM MGT Chatbot"] },
-                { name: "LaTeX", icon: "devicon-latex-original", projects: ["University", "Personal Projects"] }
+                { name: "LaTeX", icon: "devicon-latex-original", projects: ["University", "Personal Projects"] },
+                { name: "Cyber-Physical Systems", icon: "devicon-raspberrypi-plain colored", projects: ["Smart Parking Lot"] }
             ]
         }
     ],
@@ -53,9 +54,9 @@ const skillsData = {
         {
             title: "Spoken Languages",
             items: [
-                { name: "English", icon: '<img src="https://flagcdn.com/w40/us.png" alt="US Flag" />' },
-                { name: "German", icon: '<img src="https://flagcdn.com/w40/de.png" alt="German Flag" />' },
-                { name: "Russian", icon: '<img src="https://flagcdn.com/w40/ru.png" alt="Russian Flag" />' }
+                { name: "English", icon: '<img src="https://flagcdn.com/w40/us.png" alt="US Flag" />', description: "C1 - Advanced" },
+                { name: "German", icon: '<img src="https://flagcdn.com/w40/de.png" alt="German Flag" />', description: "B1 - Intermediate" },
+                { name: "Russian", icon: '<img src="https://flagcdn.com/w40/ru.png" alt="Russian Flag" />', description: "Native" }
             ]
         }
     ]
@@ -89,6 +90,13 @@ const projectsData = {
                     description: "Reinforcement Learning project developing an AI agent to play American Checkers.\n\nKey achievements:\n• Implemented Q-Learning and Deep Q-Learning algorithms\n• Designed the AI to learn strategies and adapt gameplay accordingly\n• Created efficient board state representations with feature extraction techniques to reduce computational complexity\n• Analyzed QL vs DQL performance through competitive testing\n• Built graph visualizations comparing agent performance across approaches",
                     screenshots: ["img/american_checkers_screenshot_1.png"],
                     link: "https://github.com/zzirkell/checkers_game"
+                },
+                {
+                    name: "Smart Parking Lot",
+                    icon: "devicon-python-plain colored",
+                    description: "Cyber-Physical Systems project integrating computer vision with hardware control.\n\nKey achievements:\n• Engineered a computer vision system in Python to detect parking space occupancy\n• Controlled physical actuators (barriers) demonstrating hardware-software integration\n• Implemented OCR pipelines for license plate recognition using open-source libraries",
+                    screenshots: ["img/smart_parkig_lot_screenshot_1.png", "img/smart_parkig_lot_screenshot_2.png"],
+                    link: "https://github.com/CPSCourse-TUM-HN/smart-parking-lot-system"
                 }
             ]
         }

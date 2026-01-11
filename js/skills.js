@@ -86,12 +86,18 @@ function renderPanels(leftId, rightId, data, panelType = 'skills') {
         if (!isCurrentlyExpanded) {
             skillItem.classList.add('expanded');
             const contentContainer = skillItem.querySelector('.skill-projects');
-
-            // Show project links for skill items
+            const description = skillItem.dataset.description;
             const projects = JSON.parse(skillItem.dataset.projects || '[]');
-            contentContainer.innerHTML = projects.map(proj =>
-                `<span class="skill-project-link" onclick="handleProjectClick('${proj}')">${proj}</span>`
-            ).join('');
+
+            if (description) {
+                // Show description (for languages with proficiency levels)
+                contentContainer.innerHTML = `<div class="skill-level">${description}</div>`;
+            } else if (projects.length > 0) {
+                // Show project links for skill items
+                contentContainer.innerHTML = projects.map(proj =>
+                    `<span class="skill-project-link" onclick="handleProjectClick('${proj}')">${proj}</span>`
+                ).join('');
+            }
         }
     };
 

@@ -123,7 +123,7 @@ body {
 
 .skill-items {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 12px;
 }
 
@@ -266,6 +266,12 @@ body {
 .skill-project-link:hover {
     color: #d8b4fe;
     text-decoration: underline;
+}
+
+.skill-level {
+    font-size: 0.85rem;
+    color: #a855f7;
+    font-weight: 500;
 }
 
 /* Project Descriptions */
@@ -472,6 +478,17 @@ body {
     font-size: 1rem;
 }
 
+.bubble .chat-link {
+    color: #a855f7;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.bubble .chat-link:hover {
+    color: #d8b4fe;
+    text-decoration: underline;
+}
+
 .message.bot .bubble {
     background: rgba(255, 255, 255, 0.08);
     border-top-left-radius: 4px;
@@ -551,6 +568,38 @@ button.send-btn:disabled {
     opacity: 0.5;
     cursor: not-allowed;
     transform: none;
+}
+
+/* Preset Message Buttons */
+.preset-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.preset-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--text-secondary);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.preset-btn:hover {
+    background: rgba(168, 85, 247, 0.15);
+    border-color: rgba(168, 85, 247, 0.4);
+    color: var(--text-primary);
+    transform: translateY(-2px);
+}
+
+.preset-btn:active {
+    transform: translateY(0);
 }
 
 /* Loading Animation */
