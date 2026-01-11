@@ -124,12 +124,13 @@ body {
 .skill-items {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 12px;
 }
 
 .skills-left .skill-items,
 .projects-left .skill-items {
-    justify-content: flex-end;
+    align-items: flex-end;
 }
 
 .skills-right .skill-items,
