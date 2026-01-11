@@ -15,7 +15,27 @@ function formatMessage(text) {
 
     lines.forEach(line => {
         let trimmed = line.trim();
-        if (trimmed.startsWith('- ')) {
+
+        // Handle markdown headers
+        if (trimmed.startsWith('### ')) {
+            if (inList) {
+                output.push('</ul>');
+                inList = false;
+            }
+            output.push(`<h4 class="chat-heading">${trimmed.substring(4)}</h4>`);
+        } else if (trimmed.startsWith('## ')) {
+            if (inList) {
+                output.push('</ul>');
+                inList = false;
+            }
+            output.push(`<h3 class="chat-heading">${trimmed.substring(3)}</h3>`);
+        } else if (trimmed.startsWith('# ')) {
+            if (inList) {
+                output.push('</ul>');
+                inList = false;
+            }
+            output.push(`<h2 class="chat-heading">${trimmed.substring(2)}</h2>`);
+        } else if (trimmed.startsWith('- ')) {
             if (!inList) {
                 output.push('<ul>');
                 inList = true;

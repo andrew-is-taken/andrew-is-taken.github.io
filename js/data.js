@@ -69,12 +69,14 @@ const projectsData = {
                 {
                     name: "Subspace",
                     icon: "devicon-unity-plain colored",
-                    description: "Mobile FPS with portal mechanics and custom rendering optimization for low-end devices."
+                    description: "Mobile FPS game built with Unity featuring a complex 3D portal system utilizing inverse transforms and quaternion rotations for seamless, momentum-conserving teleportation.\n\nKey achievements:\n• Engineered portal mechanics for players and physics objects with smooth transitions\n• Architected a robust security framework with custom memory obfuscation and AES-256 encryption with HMAC integrity\n• Built a modular anti-cheat system to prevent injection and tampering\n• Integrated Firebase for real-time cloud synchronization\n• Optimized mobile performance through dynamic resolution scaling and mesh combining",
+                    screenshots: ["img/subspace_screenshot_1.jpg", "img/subspace_screenshot_2.jpg", "img/subspace_screenshot_3.jpg"]
                 },
                 {
                     name: "Rick",
                     icon: "devicon-unity-plain colored",
-                    description: "Released Unity game with 20k+ downloads. Ad monetization and A/B testing for retention."
+                    description: "Published Unity-based mobile game achieving 20,000+ downloads.\n\nKey achievements:\n• Full-cycle development handling everything from C# scripting to UI implementation\n• Iterated on user interface designs based on A/B testing data to improve player retention and usability\n• Implemented ad monetization strategies",
+                    screenshots: ["img/rick_kpi_screenshot.png", "img/rick_advertising.JPG"]
                 }
             ]
         },
@@ -84,7 +86,9 @@ const projectsData = {
                 {
                     name: "American Checkers",
                     icon: "devicon-python-plain colored",
-                    description: "RL agent using Q-Learning and Deep Q-Learning with performance comparison analysis."
+                    description: "Reinforcement Learning project developing an AI agent to play American Checkers.\n\nKey achievements:\n• Implemented Q-Learning and Deep Q-Learning algorithms\n• Designed the AI to learn strategies and adapt gameplay accordingly\n• Created efficient board state representations with feature extraction techniques to reduce computational complexity\n• Analyzed QL vs DQL performance through competitive testing\n• Built graph visualizations comparing agent performance across approaches",
+                    screenshots: ["img/american_checkers_screenshot_1.png"],
+                    link: "https://github.com/zzirkell/checkers_game"
                 }
             ]
         }
@@ -96,7 +100,10 @@ const projectsData = {
                 {
                     name: "TUM MGT Chatbot",
                     icon: "devicon-nextjs-plain",
-                    description: "Full-stack AI assistant with Next.js frontend and Python FastAPI backend, using OpenAI services."
+                    description: "AI-powered chatbot for the Technical University of Munich School of Management website.\n\nKey achievements:\n• Provides intelligent assistance to students, faculty, and visitors with program navigation, course information, and FAQ support\n• Developed responsive UI with React, Next.js, TypeScript, and Tailwind CSS\n• Built admin dashboard for monitoring chatbot performance and user interactions\n• Created RESTful API with Python FastAPI and Pydantic for type-safe data validation\n• Integrated SharePoint as a knowledge source for document retrieval",
+                    screenshots: ["img/chatbot_screenshot_1.png", "img/chatbot_screenshot_2.png"],
+                    link: "https://chat.it.tum.de/chat",
+                    linkNote: "Requires TUM credentials to access"
                 }
             ]
         },
@@ -106,12 +113,15 @@ const projectsData = {
                 {
                     name: "Campus Connect",
                     icon: "devicon-react-original colored",
-                    description: "React Native uni app with AI chatbot, friend connections, and event planning."
+                    description: "React Native university app for student community and academic support.\n\nKey achievements:\n• Developed and integrated the AI Assistant feature for intelligent tutoring and real-time study assistance\n• Engineered a complete friend request and management system to foster community and social networking\n• Implemented a robust smart notification system using Supabase Realtime for priority-based alerts across the platform",
+                    screenshots: ["img/campus_connect_screenshot_1.jpg", "img/campus_connect_screenshot_2.jpg", "img/campus_connect_screenshot_3.jpg"]
                 },
                 {
                     name: "CV Maker",
                     icon: "devicon-react-original colored",
-                    description: "Generative AI app using GPT-4o to create and convert LaTeX CVs to PDF."
+                    description: "React Native app for AI-powered CV generation.\n\nKey achievements:\n• Coordinated development process and task handover for job scraping and CV generation features\n• Designed and implemented a module converting AI-generated LaTeX CVs to PDF via API\n• Collaborated with team to align app features with user needs for a seamless job seeker experience",
+                    screenshots: ["img/cv_maker_screenshot_1.png", "img/cv_maker_screenshot_2.png", "img/cv_maker_screenshot_3.png"],
+                    link: "https://github.com/ahmedeltayyeb/GenAI"
                 }
             ]
         }
